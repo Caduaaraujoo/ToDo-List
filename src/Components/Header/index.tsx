@@ -1,7 +1,9 @@
+import style from './Header.module.css'
+
 export function Header() {
     return (
-        <>
-            <h1>Header</h1>
-        </>
+        <div className={style.container}>
+            <h1>Todo</h1>
+        </div>
     )
 }
