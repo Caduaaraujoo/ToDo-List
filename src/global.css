@@ -1,4 +1,5 @@
 :root {
+    --white-100: #D9D9D9;
     --gray-100: #F2F2F2;
     --gray-200: #D9D9D9;
     --gray-300: #808080;
@@ -7,7 +8,6 @@
     --gray-600: #1A1A1A;
     --gray-700: #0D0D0D;
 
-    --body: #454545;
     --danger: #E25858;
     --purple: #8284FA;
     --purple-dark: #5E60CE;
@@ -23,7 +23,17 @@
 }
 
 body {
-    height: 100vh;
-    width: 100vw;
-    background-color: var(--body);
+    background-color: var(--gray-500);
+    font-family: "Inter", sans-serif;
+}
+
+span,
+h4 {
+    font-weight: 700;
+}
+
+input,
+textarea,
+p {
+    font-weight: 400;
 }

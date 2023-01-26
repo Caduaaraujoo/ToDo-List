@@ -1,6 +1,15 @@
 .button {
+    all: unset;
     width: 90px;
     height: 52px;
-    background-color: var(--blue);
+    background-color: var(--blue-dark);
     border-radius: 8px;
+    color: var(--gray-100);
+    font-weight: 700;
+    font-size: 14px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
 }

@@ -1,0 +1,30 @@
+.container_tasks {
+    width: 736px;
+    height: 19px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.task {
+    display: flex;
+    gap: 8px;
+    font-size: 14px;
+}
+
+.tasks_criadas {
+    color: var(--blue);
+}
+
+.tasks_concluidas {
+    color: var(--purple);
+}
+
+.counter {
+    height: 19px;
+    width: 25px;
+    border-radius: 50%;
+    background-color: var(--gray-400);
+    color: var(--white-100);
+    text-align: center;
+    font-size: 12px;
+}
