@@ -4,8 +4,9 @@ import style from './App.module.css'
 import { Header } from './Components/Header'
 import { Input } from './Components/Input'
 import { Button } from './Components/Button'
-import { Tasks } from './Components/Tasks'
+import { InfoTasks } from './Components/InfoTasks'
 import { Empty } from './Components/Empty'
+import { Tasks } from './Components/Tasks'
 
 export function App() {
 
@@ -17,8 +18,9 @@ export function App() {
         <Button />
       </section>
       <main>
-        <Tasks />
+        <InfoTasks />
         <Empty />
+        <Tasks />
       </main>
     </div>
   )

@@ -1,30 +1,32 @@
-.container_tasks {
+.container {
     width: 736px;
-    height: 19px;
+    height: 72px;
     display: flex;
     justify-content: space-between;
-}
-
-.task {
-    display: flex;
-    gap: 8px;
-    font-size: 14px;
-}
-
-.tasks_criadas {
-    color: var(--blue);
-}
-
-.tasks_concluidas {
-    color: var(--purple);
-}
-
-.counter {
-    height: 19px;
-    width: 25px;
-    border-radius: 50%;
+    align-items: center;
+    gap: 12px;
     background-color: var(--gray-400);
-    color: var(--white-100);
-    text-align: center;
-    font-size: 12px;
+    border: 1px solid #333333;
+    border-radius: 8px;
+    font-size: 14px;
+    padding: 16px;
+}
+
+.check {
+    width: 17.45px;
+    height: 17.45px;
+}
+
+.trash {
+    width: 12.48px;
+    height: 14px;
+}
+
+.check:hover {
+    background-color: var(--blue-dark);
+    border-radius: 50%;
+}
+
+.trash:hover path {
+    fill: var(--danger);
 }

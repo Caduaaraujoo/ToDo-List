@@ -37,3 +37,14 @@ textarea,
 p {
     font-weight: 400;
 }
+
+textarea:focus,
+input:focus,
+select:focus {
+    outline: 0;
+}
+
+img,
+button {
+    cursor: pointer;
+}
