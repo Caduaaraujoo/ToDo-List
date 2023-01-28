@@ -1,10 +1,10 @@
 .container {
+    margin-bottom: 12px;
     width: 736px;
     height: 72px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 12px;
     background-color: var(--gray-400);
     border: 1px solid #333333;
     border-radius: 8px;

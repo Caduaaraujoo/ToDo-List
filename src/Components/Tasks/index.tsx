@@ -1,11 +1,15 @@
 import style from './Tasks.module.css'
 import check from '../../assets/check.svg'
 
-export function Tasks() {
+interface Props {
+    content: string
+}
+
+export function Tasks({ content }: Props) {
     return (
         <div className={style.container}>
             <img className={style.check} src={check} />
-            <p>Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.</p>
+            <p>{content}</p>
             <div className={style.container_delete}>
                 <svg className={style.trash} width="13" height="14" viewBox="0 0 13 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M8.20214 4.98548H6.87158V10.5073H8.20214V4.98548Z" fill="#808080" />
