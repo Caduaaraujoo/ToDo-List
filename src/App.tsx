@@ -9,15 +9,21 @@ import { Empty } from './Components/Empty'
 import { Tasks } from './Components/Tasks'
 import { Form } from './Components/Form'
 import { useState } from 'react'
+import { TaskT } from './interfaces/taks'
+
+
 
 export function App() {
-  const [tasks, setTasks] = useState<string[]>([])
+  const [tasks, setTasks] = useState<TaskT[]>([])
 
   return (
     <div className={style.container}>
       <Header />
       <section className={style.section_input}>
-        <Form tasks={tasks} setTasks={setTasks} />
+        <Form
+          tasks={tasks}
+          setTasks={setTasks}
+        />
       </section>
       <main>
         <InfoTasks
@@ -27,11 +33,14 @@ export function App() {
           ?
           <Empty />
           :
-          tasks.map((task, index) => {
+          tasks.map((task) => {
             return (
               <Tasks
-                key={index}
-                content={task}
+                key={task.id}
+                id={task.id}
+                content={task.content}
+                tasks={tasks}
+                setTasks={setTasks}
               />
             )
           })

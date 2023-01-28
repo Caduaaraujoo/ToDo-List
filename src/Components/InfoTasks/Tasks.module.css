@@ -21,11 +21,25 @@
 }
 
 .counter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     height: 19px;
     width: 25px;
-    border-radius: 50%;
     background-color: var(--gray-400);
     color: var(--white-100);
-    text-align: center;
+    border-radius: 50%;
+
+}
+
+.counterTotal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 19px;
+    background-color: var(--gray-400);
+    color: var(--white-100);
     font-size: 12px;
+    border-radius: 50%;
 }

@@ -36,3 +36,9 @@
 .button:hover {
     background-color: var(--blue);
 }
+
+
+.button:hover:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}

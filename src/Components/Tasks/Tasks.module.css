@@ -30,3 +30,7 @@
 .trash:hover path {
     fill: var(--danger);
 }
+
+.taskComplet {
+    text-decoration: line-through;
+}

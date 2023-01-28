@@ -1,15 +1,16 @@
 import style from './Form.module.css'
 import plus from '../../assets/plus.svg'
 import { ChangeEvent, Dispatch, FormEvent, SetStateAction, useState } from 'react'
+import { TaskT } from '../../interfaces/taks'
+import { v4 as uuidv4, v4 } from 'uuid'
 
 interface Props {
-    tasks: string[],
-    setTasks: Dispatch<SetStateAction<string[]>>
+    tasks: TaskT[],
+    setTasks: Dispatch<SetStateAction<TaskT[]>>
 }
 
 
 export function Form({ tasks, setTasks }: Props) {
-
     const [newTask, setNewTask] = useState<string>('')
 
     const handleNewTask = (e: ChangeEvent<HTMLInputElement>) => {
@@ -18,7 +19,17 @@ export function Form({ tasks, setTasks }: Props) {
 
     const handleCreateNewTask = (e: FormEvent) => {
         e.preventDefault()
-        setTasks([...tasks, newTask])
+        if (!newTask) {
+            return;
+        }
+        setTasks([
+            ...tasks,
+            {
+                id: v4(),
+                content: newTask,
+                complete: false
+            }
+        ])
         setNewTask('')
     }
 

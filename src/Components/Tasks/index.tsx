@@ -1,16 +1,49 @@
 import style from './Tasks.module.css'
 import check from '../../assets/check.svg'
+import ok from '../../assets/ok.svg'
+import { Dispatch, SetStateAction, useRef, useState } from 'react'
+import { TaskT } from '../../interfaces/taks'
 
 interface Props {
-    content: string
+    content: string,
+    tasks: TaskT[],
+    id: string,
+    setTasks: Dispatch<SetStateAction<TaskT[]>>
 }
 
-export function Tasks({ content }: Props) {
+
+export function Tasks({ content, tasks, setTasks, id }: Props) {
+    const refImgCheck = useRef<HTMLImageElement | null>(null)
+    const [checkOk, setCheckOk] = useState<boolean>(false)
+
+    const handleCheck = (id: string): void => {
+        if (refImgCheck.current) {
+            checkOk ? refImgCheck.current.src = check : refImgCheck.current.src = ok
+            setCheckOk(!checkOk)
+        }
+        const taskIndex = tasks.findIndex((task) => {
+            return task.id == id
+        })
+        const tempTasks = [...tasks];
+
+        tempTasks[taskIndex].complete = !tempTasks[taskIndex].complete
+        setTasks(tempTasks)
+
+    }
+
+    const handleDeleteTask = (id: string) => {
+        const tasksAtuaUpdated = tasks.filter((task) => {
+            return task.id !== id
+        })
+        setTasks([...tasksAtuaUpdated])
+    }
     return (
         <div className={style.container}>
-            <img className={style.check} src={check} />
-            <p>{content}</p>
-            <div className={style.container_delete}>
+            <img ref={refImgCheck} className={style.check} src={check} onClick={() => handleCheck(id)} />
+            <p className={checkOk ? style.taskComplet : ''}>{content}</p>
+            <div className={style.container_delete}
+                onClick={() => handleDeleteTask(id)}
+            >
                 <svg className={style.trash} width="13" height="14" viewBox="0 0 13 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M8.20214 4.98548H6.87158V10.5073H8.20214V4.98548Z" fill="#808080" />
                     <path d="M5.46239 4.98548H4.13184V10.5073H5.46239V4.98548Z" fill="#808080" />
