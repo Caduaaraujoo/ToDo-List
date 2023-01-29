@@ -1,12 +1,13 @@
 import style from './Form.module.css'
 import plus from '../../assets/plus.svg'
 import { ChangeEvent, Dispatch, FormEvent, SetStateAction, useState } from 'react'
-import { TaskT } from '../../interfaces/taks'
-import { v4 as uuidv4, v4 } from 'uuid'
+import { Button } from '../../Components/Button'
+import { TaskDefault } from '../../interfaces/taks'
+import { v4 } from 'uuid'
 
 interface Props {
-    tasks: TaskT[],
-    setTasks: Dispatch<SetStateAction<TaskT[]>>
+    tasks: TaskDefault[],
+    setTasks: Dispatch<SetStateAction<TaskDefault[]>>
 }
 
 
@@ -42,12 +43,7 @@ export function Form({ tasks, setTasks }: Props) {
                 placeholder="Adicione uma tarefa"
                 onChange={handleNewTask}
             />
-            <button
-                className={style.button}
-            >
-                Criar
-                <img src={plus}></img>
-            </button>
+            <Button />
         </form>
     )
 }

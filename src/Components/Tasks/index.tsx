@@ -2,13 +2,13 @@ import style from './Tasks.module.css'
 import check from '../../assets/check.svg'
 import ok from '../../assets/ok.svg'
 import { Dispatch, SetStateAction, useRef, useState } from 'react'
-import { TaskT } from '../../interfaces/taks'
+import { TaskDefault } from '../../interfaces/taks'
 
 interface Props {
     content: string,
-    tasks: TaskT[],
+    tasks: TaskDefault[],
     id: string,
-    setTasks: Dispatch<SetStateAction<TaskT[]>>
+    setTasks: Dispatch<SetStateAction<TaskDefault[]>>
 }
 
 

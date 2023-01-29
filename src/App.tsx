@@ -2,19 +2,17 @@
 import './global.css'
 import style from './App.module.css'
 import { Header } from './Components/Header'
-// import { Input } from './Components/Input'
-import { Button } from './Components/Button'
 import { InfoTasks } from './Components/InfoTasks'
 import { Empty } from './Components/Empty'
 import { Tasks } from './Components/Tasks'
 import { Form } from './Components/Form'
 import { useState } from 'react'
-import { TaskT } from './interfaces/taks'
+import { TaskDefault } from './interfaces/taks'
 
 
 
 export function App() {
-  const [tasks, setTasks] = useState<TaskT[]>([])
+  const [tasks, setTasks] = useState<TaskDefault[]>([])
 
   return (
     <div className={style.container}>
@@ -27,7 +25,7 @@ export function App() {
       </section>
       <main>
         <InfoTasks
-          totalTask={tasks}
+          tasks={tasks}
         />
         {tasks.length <= 0
           ?

@@ -1,12 +1,12 @@
 import style from './Tasks.module.css'
-import { TaskT } from '../../interfaces/taks'
+import { TaskDefault } from '../../interfaces/taks'
 
 interface Props {
-    totalTask: TaskT[]
+    tasks: TaskDefault[]
 }
 
-export function InfoTasks({ totalTask }: Props) {
-    const totalTaskComplete = totalTask.filter((task) => {
+export function InfoTasks({ tasks }: Props) {
+    const totalTaskComplete = tasks.filter((task) => {
         return task.complete == true
     })
 
@@ -14,7 +14,7 @@ export function InfoTasks({ totalTask }: Props) {
         <div className={style.container_tasks}>
             <div className={`${style.task} ${style.tasks_criadas}`}>
                 <span>Tarefas criadas</span>
-                <span className={`${style.counter}`}>{totalTask.length}</span>
+                <span className={`${style.counter}`}>{tasks.length}</span>
             </div>
             <div className={`${style.task} ${style.tasks_concluidas}`}>
                 <span> Concluídas</span>
@@ -22,7 +22,7 @@ export function InfoTasks({ totalTask }: Props) {
                     ?
                     <span className={`${style.counter}`}>0</span>
                     :
-                    <span className={style.counterTotal}>{`${totalTaskComplete.length}  de ${totalTask.length}`}</span>
+                    <span className={style.counterTotal}>{`${totalTaskComplete.length}  de ${tasks.length}`}</span>
                 }
 
             </div>
